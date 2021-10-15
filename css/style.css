@@ -1,0 +1,392 @@
+@charset "UTF-8";
+html{
+    font-size: 100%;
+}
+@media screen and (min-width:481px)and(max-width:1280px) {
+    .container{
+        width: 1280px;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+body h2{
+    font-weight: 600;
+}
+p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    line-height: 30px;/*行距*/
+    color: #6c757d;
+}
+.bg-sec{
+    background: #f8f9fa;
+}
+.hire-me.btn{
+    border: tomato;
+    padding: 5px 20px;
+    background-color: rgb(71, 181, 255);
+    color: white;
+}
+
+/* Loading page */
+/* black backgroung */
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9998;
+}
+
+.preloader:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: #000;
+    transition: 1s;
+}
+.preloader:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: #000;
+    transition: 1s;
+}
+.preloader.complete:before{
+    bottom:-50% ;
+}
+.preloader.complete:after{
+    top:-50% ;
+}
+.preloader.complete{
+    visibility: hidden;
+}
+
+.circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    border: 10px solid rgba(255, 255, 255, 0.1);
+    border-top: 10px solid #ecee83;
+    animation: animate 1s infinite linear;
+    z-index: 9999;
+}
+/* 動畫旋轉 */
+@keyframes animate {
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Navigation */
+
+/* goBack */
+.goBack {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    font-size: 48px;
+    color:rgba(168, 168, 168, 0.8);
+    z-index: 9997;
+}
+nav .container a{
+font-weight: 600;
+}
+nav.r-nav{
+    background-color:transparent;
+    padding: 20px 0;
+    transition: 0.25s all;
+}
+/* logo img */
+nav .d-inline-block{
+    margin: 0 16px;
+    width: 30px;
+    height: 30px;
+}
+/* logo words */
+nav .navbar-brand{
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+}
+nav .navbar-brand:hover{
+    color: rgba(255, 255, 255);
+}
+nav .navbar-nav li a{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+    font-family: 'Nunito',sans-serif;  
+}
+nav .navbar-nav li a:hover{
+    color: rgba(255, 255, 255);   
+}
+nav .navbar-nav li{
+    margin-left: 15px;
+}
+nav.r-nav.stickyadd{
+    background: rgb(255, 255, 255);
+    padding: 15px 0;
+    box-shadow: 0 1px 8px 3px rgba(0,0,0,0.05);
+    transition: 0.5s all ease-in-out;
+ }
+nav.stickyadd .navbar-brand{
+     color: #000;
+     font-size: 24px;
+     transition: 0.5s all;
+ }
+ /* words */
+nav.stickyadd .navbar-nav .nav-link {
+    color: #000 !important;
+    transition: .2s all ease-out ;
+  }
+nav.stickyadd .navbar-nav .nav-link:hover {
+    color: rgb(180, 180, 180) !important;
+  }
+ /* 漢堡按鈕 */
+.navbar .hamburger{
+     color: #fff;
+ }
+nav.stickyadd .hamburger{
+    color: #000;
+}
+nav *,
+header * {
+  animation-delay: 0.5s;
+}
+/* ---------------------------------------------------------------- */
+/* Header Section  */
+header{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/background.jpg');
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center;
+}
+.header-content{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* 文字 的父盒子 */
+.content-box{
+    max-width: 700px;
+}
+.content-box h3{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+.content-box h1{
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+}
+
+.content-box a{
+    color: rgb(255, 232, 128);
+    border: 2px solid rgb(255, 232, 128);
+    border-radius: 20px;
+    padding: 5px 25px;
+}
+
+.content-box a:hover{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 232, 128);
+    transition: 0.3s all ease-out;
+}
+.content-box p{
+    color: #fff;
+}
+.r-p{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+/* ---------------------------------------------------------------- */
+/* About Section  */
+/* image */
+.about .imgBox{
+    margin-bottom: 16px;
+}
+.about img{
+    width: 450px;
+}
+/* text */
+.about .textBox{
+    position: relative;
+    width: auto;
+    height: 500px;
+    margin-bottom: 36px;
+}
+.about .textBox h2{
+    font-weight:600;
+}
+.about p{
+    color: black;
+}
+/* icon */
+.about .icon{
+    top: 0;
+    right: 0;
+}
+.about li a{
+    color: #000;
+    display: inline-block;
+    right: 0;
+    height: 42px;
+    width: 42px;
+    font-size: 20px;
+    border: 2px solid #d4d4d4;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    transition: 0.3s all;
+}
+.about li a:hover{
+    color: rgb(104, 182, 255);
+}
+/* ---------------------------------------------------------------- */
+/* Skill Section  */
+/* 進度條 */
+.exp-class .progress{
+    height: 15px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+.progress-bar{
+    background-color: #EE8683;
+}
+.exp-class{
+    font-size: 20px;
+    margin: 10px;
+}
+/* ---------------------------------------------------------------- */
+/* Service Section  */
+.servicesBox{
+    margin-top: 36px;
+}
+.servicesBox h2{
+    font-weight: 600;
+}
+.servicesBox h5{
+    font-weight: 600;
+}
+.card,.card-header{
+    background-color: #f8f9fa;
+}
+.card-header{
+    border: none;
+}
+/* icon */
+.services-class .card-header i{
+    font-size: 50px;
+}
+.service-border{
+    height: 2px;
+    width: 40px;
+    margin: 10px auto;
+    background: #e65f78;
+}
+/* button */
+.hire-me .btn {
+    border-radius: 20px;
+    padding: 5px 20px;
+    background-color: rgb(71, 181, 255);
+    color: white;
+}
+.hire-me .btn:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(71, 181, 255);
+}
+/* ---------------------------------------------------------------- */
+/* Demo Section  */
+.testimony-class .test-item{
+    max-width: 500px;
+    margin: 50px auto;
+}
+.testimony-class .text-title{
+    font-size: 18px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+/* ---------------------------------------------------------------- */
+/* Portfolio Section  */
+    #portfolio .container .titleBox{
+    display: block;
+    margin: 0 ;
+}
+/* button */
+.work button:hover{
+    font-weight: 700;
+}
+.work .card-wrapper{
+    padding-top:15px;
+    padding-bottom:15px;
+    border: 2px solid transparent;
+}
+.work .card-wrapper img{
+    transition: .5s all;
+ }
+.work .card-wrapper img:hover{
+    transform: scale(1.1);
+}
+/* ---------------------------------------------------------------- */
+/* Contact Section  */
+.contact .r-icon{
+    font-size: 50px;
+    text-align: center;
+}
+.contact .btn{
+    border: 2px solid rgb(71, 181, 255);
+    background-color: rgb(71, 181, 255);
+    color: white;
+}
+.contact .btn:hover{
+    border: 2px solid rgb(71, 181, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(71, 181, 255);
+}
+/* ---------------------------------------------------------------- */
+/* Footer Section  */
+.Footer{
+    height: 200px;
+    background-color: #3333;
+}
+.Footer .r-icon .iconBox a{
+    display: inline-block;
+    height: 50px;
+    line-height: 45px;
+    width: 50px;
+    border-radius: 50%;
+    color: #848484;
+    margin: 12px 8px 0;
+    font-size: 20px;
+    border: 2px solid #bebebe;
+}
+.Footer .r-icon a:hover{
+    color: #ffffff;
+    background-color: #848484;
+}
